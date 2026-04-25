@@ -151,13 +151,29 @@ export default function LoginPage() {
                   </label>
                 </div>
 
-                <button 
-                  type="submit"
-                  className="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-3"
-                >
-                  เข้าสู่ระบบ
-                  <LogIn size={20} />
-                </button>
+                <div className="flex flex-col gap-3">
+                  <button 
+                    type="submit"
+                    className="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+                  >
+                    เข้าสู่ระบบ
+                    <LogIn size={20} />
+                  </button>
+
+                  <button 
+                    type="button"
+                    onClick={() => {
+                      setEmail('alongkorn.meesin@gmail.com');
+                      setPassword('password123');
+                      login('alongkorn.meesin@gmail.com', 'admin');
+                      navigate('/');
+                    }}
+                    className="w-full py-3 bg-surface-container border border-outline text-on-surface-variant font-bold rounded-xl hover:bg-surface-container-high hover:text-white transition-all flex items-center justify-center gap-2 group"
+                  >
+                    <ShieldAlert size={18} className="text-primary group-hover:scale-110 transition-transform" />
+                    <span>Login as Admin (Demo)</span>
+                  </button>
+                </div>
               </form>
 
               <div className="mt-10">
