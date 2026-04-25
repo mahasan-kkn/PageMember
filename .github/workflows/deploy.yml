@@ -2,23 +2,26 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # ตรวจสอบว่าเป็น branch หลักของคุณ (บางคนใช้ master)
+    branches: ["main"]
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Opt-in to Node.js 24 early to avoid deprecation warnings
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # Note: Versions like v4 will be updated by GitHub to support newer Node runtimes
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24 # Use Node.js 24 as requested by the environment
           cache: 'npm'
       - name: Install dependencies
         run: npm install
