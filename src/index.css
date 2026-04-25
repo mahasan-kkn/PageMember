@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #6366f1; /* Indigo 500 */
+  --color-on-primary: #ffffff;
+  --color-primary-container: #4f46e5; /* Indigo 600 */
+  --color-on-primary-container: #ffffff;
+  
+  --color-background: #0f172a; /* Slate 900 */
+  --color-surface: #0b1120; /* Slate 950 */
+  --color-surface-container: #1e293b; /* Slate 800 */
+  --color-surface-container-low: #1e293b66; /* Slate 800/40 */
+  --color-surface-container-high: #1e293b;
+  --color-surface-container-highest: #334155; /* Slate 700 */
+  
+  --color-on-surface: #f1f5f9; /* Slate 100 */
+  --color-on-surface-variant: #94a3b8; /* Slate 400 */
+  
+  --color-outline: #334155; /* Slate 700 */
+  --color-outline-variant: #1e293b; /* Slate 800 */
+  
+  --color-secondary: #64748b; /* Slate 500 */
+  --color-secondary-container: #1e293b;
+  --color-on-secondary-container: #cbd5e1;
+  
+  --color-error: #ef4444;
+  
+  --radius-xl: 1.5rem;
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+}
+
+body {
+  @apply bg-background text-on-surface font-sans antialiased;
+  min-height: 100dvh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
